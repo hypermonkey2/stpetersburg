@@ -8,7 +8,7 @@ shinyUI(pageWithSidebar(
 
   sidebarPanel(
 
-    sliderInput('n', 'Number of Trials', min=1, max=100000, value=5000,
+    sliderInput('n', 'Number of Rounds Played', min=1, max=100000, value=5000,
                  step=500, round=0)
   ),
 

@@ -7,7 +7,6 @@ library(shinyapps)
 shinyapps::setAccountInfo(name='jonmosco', token='936B940799F26EBB9FB699B769777684', secret='MwgkbyPb2Y9/g6IK4xO9eGVQtALCBxxPPHBrJtMZ')
 
 
-terminateApp("shiny")
 
 runApp()
 
