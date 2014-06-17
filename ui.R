@@ -24,7 +24,8 @@ shinyUI(pageWithSidebar(
   
 	 textOutput('text2'),
   
-	 textOutput('text3')
+	 textOutput('text3'),
+	plotOutput('plot')
 		
   )
 ))

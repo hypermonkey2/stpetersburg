@@ -18,9 +18,36 @@ StPetersburg <- function(n) {
     return(pot.amount)
   })
 }
+
+#dataset
+	dataset<-reactive({
+	StPetersburg(input$n)
+
+})
+
+
+
+#dataset with total profit
+	dataset1<-reactive({
+	dataset()
+
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
 	datasetInput1<- reactive({
 
-result<-mean(as.numeric(StPetersburg(input$n)))
+result<-mean(as.numeric(dataset()))
 
 })
 
@@ -32,13 +59,18 @@ profit<-as.numeric((input$n*datasetInput1())-(input$bet*input$n))
 
 datasetInput2<- reactive({
 
-min<-min(as.numeric(StPetersburg(input$n)))
+min<-min(as.numeric(dataset()))
 
 })
 
 datasetInput3<- reactive({
 
-max<-max(as.numeric(StPetersburg(input$n)))
+max<-max(as.numeric(dataset()))
+
+
+
+
+
 
 })
 
@@ -67,6 +99,27 @@ max<-max(as.numeric(StPetersburg(input$n)))
 	paste("The maximum pot was ",datasetInput3())
 	})
     
+ 
+
+output$plot <- renderPlot(function() {
+
+    #p <- 
+	plot(dataset(),xlab="Trial number",ylab="Trial Pot Value")
+    #print(p)
+
+  }, height=700)
+
+#plot of total profit
+output$plot1 <- renderPlot(function() {
+
+    #p <- 
+	plot(dataset(),xlab="Trial number",ylab="Trial Pot Value")
+    #print(p)
+
+  }, height=700)
+
+
+
 
 
 })
